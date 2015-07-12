@@ -9,10 +9,8 @@ modules.export = function(hashtag, user){
 
 var params = {count: 200};
 client.get('statuses/mentions_timeline', params, function(error, tweets, response){
-	function(error){
 		if(error){
 			return error
-		}
 	}
 		var count = 0;
 		tweets.forEach(function(tweet){
