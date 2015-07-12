@@ -1,5 +1,5 @@
 var Twitter = require('twitter');
-module.export = function(hashtag, user){
+module.exports = function(hashtag, user){
 	var client = new Twitter({
 	consumer_key: process.env.TWITTER_KEY,
 	consumer_secret: process.env.TWITTER_SECRET,
