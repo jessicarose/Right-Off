@@ -1,0 +1,14 @@
+{
+	"name": "Right-Off",
+	"version": "0.0.1",
+	"description": "",
+	"dependencies": {
+		"twitter": "1.2.5",
+		"express": "4.13.1",
+		"consolidate": "0.13.1",
+		"mustache": "2.1.2",
+		"node-twitter-api": "1.6.0",
+		"express-session": "1.11.3"
+	}
+
+}
