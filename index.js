@@ -2,8 +2,10 @@ var express = require('express');
 var cons = require('consolidate');
 var twitterAPI = require('node-twitter-api');
 var session = require('express-session');
+var getTimeLine = require('./gettimeline.js')
 
 var app = express();
+var hashtag = 'cake';
 
 app.use(session({
 	secret: process.env.APP_KEY,
@@ -44,7 +46,8 @@ app.get('/', function (request, response){
 app.get('/app', function(request, response){
 	twitter.getAccessToken(request.query.oauth_token, request.session.requestTokenSecret, request.query.oauth_verifier, function(error, accessToken, accessTokenSecret, results){
 		console.log(error);
-		response.send(accessToken + ' ' + accessTokenSecret)
+		var count = getTimeLine(hashtag, {accessToken, accessTokenSecret}) 
+		response.send(count)
 	})
 })
 
